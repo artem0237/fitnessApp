@@ -9,3 +9,5 @@ Controllers: Separated into goalController.js (handles goal-related logic like c
 Services: Include goalService.js (manages goal data operations, e.g., reading/writing to goals.json) and authService.js (handles user data operations, e.g., reading/writing to users.json).
 Views: EJS templates in views/ for rendering pages (goals/, auth/, home.ejs), with a partials/ folder for reusable components like the header.
 Static Files: CSS styles in public/css/styles.css for consistent theming across the app.
+
+https://github.com/artem0237/fitnessApp - Github repo link
