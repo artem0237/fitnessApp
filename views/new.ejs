@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Goal</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="header-nav">
+      <a href="/goals" class="nav-btn">Home</a>
+      <a href="/goals/new" class="nav-btn">Create New</a>
+      <% if (typeof user !== 'undefined' && user) { %>
+        <span class="nav-user">Welcome, <%= user.username %></span>
+        
+        <a href="/logout" class="nav-btn">Logout</a>
+      <% } else { %>
+        <a href="/login" class="nav-btn">Login</a>
+        <a href="/register" class="nav-btn">Register</a>
+      <% } %>
+    </nav>
+  </header>
+  <h1>Create a New Goal</h1>
+  <form action="/goals" method="POST" class="goal-form">
+    <label class="form-label">Title: <input type="text" name="title" required></label><br>
+    <label class="form-label">Type: 
+      <select name="type">
+        <option value="weight_loss">Weight Loss</option>
+        <option value="running">Running</option>
+        <option value="strength">Strength</option>
+      </select>
+    </label><br>
+    <label class="form-label">Target Value: <input type="number" name="target_value" required></label><br>
+    <label class="form-label">Starting Value: <input type="number" name="starting_value" required></label><br>
+    <label class="form-label">Units: <input type="text" name="units" required></label><br>
+    <label class="form-label">Deadline: <input type="date" name="deadline"></label><br>
+    <button type="submit" class="submit-btn">Create Goal</button>
+  </form>
+</body>
+</html>

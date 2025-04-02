@@ -1,0 +1,15 @@
+[
+  {
+    "id": "goal_001",
+    "title": "Lose 10 pounds",
+    "type": "weight_loss",
+    "target_value": 151,
+    "starting_value": 160,
+    "units": "lbs",
+    "deadline": "2025-05-29",
+    "current_progress": 159,
+    "status": "inactive",
+    "created_date": "2025-04-02",
+    "progress_history": []
+  }
+]

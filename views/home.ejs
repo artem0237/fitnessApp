@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="home-page">
+  <div class="home-container">
+    <h1 class="home-greeting">
+      Welcome, <%= typeof user !== 'undefined' && user ? user.username : 'Guest' %>!
+    </h1>
+    <a href="/goals/new" class="home-btn">Go Create a Fitness Goal Card</a>
+  </div>
+</body>
+</html>

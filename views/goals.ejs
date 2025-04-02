@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fitness Goals</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="header-nav">
+      <a href="/goals" class="nav-btn">Home</a>
+      <a href="/goals/new" class="nav-btn">Create New</a>
+      <% if (typeof user !== 'undefined' && user) { %>
+        <span class="nav-user">Welcome, <%= user.username %></span>
+      
+        <a href="/logout" class="nav-btn">Logout</a>
+      <% } else { %>
+        <a href="/login" class="nav-btn">Login</a>
+        <a href="/register" class="nav-btn">Register</a>
+      <% } %>
+    </nav>
+  </header>
+  <h1>Your Fitness Goals</h1>
+  <form method="GET" action="/goals" class="filter-form">
+    <label class="filter-label">
+      <input type="checkbox" name="activeOnly" value="true" <%= activeOnly ? 'checked' : '' %>>
+      Show Active Goals Only
+    </label>
+    <button type="submit" class="filter-btn">Filter</button>
+  </form>
+  <ul class="goal-list">
+    <% goals.forEach(goal => { %>
+      <li class="goal-card">
+        <div class="goal-info">
+          <span class="goal-title"><%= goal.title %></span>
+          <span class="goal-progress">(<%= goal.current_progress %>/<%= goal.target_value %> <%= goal.units %>)</span>
+          <div class="goal-meta">
+            <span class="goal-meta-item">Created: <%= goal.created_date %></span>
+            <span class="goal-meta-item">Deadline: <%= goal.deadline || 'None' %></span>
+          </div>
+        </div>
+        <div class="goal-actions">
+          <a href="/goals/<%= goal.id %>/edit" class="edit-link">Edit</a>
+          <form action="/goals/<%= goal.id %>/delete" method="POST" class="delete-form">
+            <button type="submit" class="delete-btn">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
