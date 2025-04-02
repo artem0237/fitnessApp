@@ -11,3 +11,4 @@ Views: EJS templates in views/ for rendering pages (goals/, auth/, home.ejs), wi
 Static Files: CSS styles in public/css/styles.css for consistent theming across the app.
 
 https://github.com/artem0237/fitnessApp - Github repo link
+https://fitnessapp-jyw9.onrender.com - The link to public version of website
